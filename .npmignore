@@ -1,0 +1,9 @@
+__tests__
+src/view
+createEntryFile.mjs
+\.*
+webpack.*
+coverage
+jest.config.js
+package-linkedin-connector-edge-*.zip
+adobe-reactor-extension-linkedin-edge-*.tgz

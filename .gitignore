@@ -1,0 +1,9 @@
+node_modules
+coverage
+test_results
+dist
+.sandbox
+.entries
+adobe-reactor-extension-linkedin-edge-*.tgz
+package-linkedin-connector-edge-*.zip
+.eslintcache

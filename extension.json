@@ -1,0 +1,163 @@
+{
+  "displayName": "LinkedIn",
+  "name": "linkedin-connector-edge",
+  "iconPath": "resources/icons/linkedin-logo.svg",
+  "platform": "edge",
+  "version": "1.0.1",
+  "description": "Forward data to LinkedIn by using the LinkedIn Conversion API.",
+  "author": {
+    "name": "Adobe",
+    "url": "http://adobe.com"
+  },
+  "exchangeUrl": "https://exchange.adobe.com/apps/ec/109946/linkedin-conversions-api",
+  "viewBasePath": "dist/",
+  "configuration": {
+    "viewPath": "configuration/configuration.html",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "authentication": {
+          "type": "object",
+          "properties": {
+            "accessToken": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false,
+          "required": ["accessToken"]
+        }
+      },
+      "additionalProperties": false,
+      "required": ["authentication"]
+    }
+  },
+  "actions": [
+    {
+      "displayName": "Send Conversion",
+      "name": "send-conversion",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+          "user_identification": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "sha256_email": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "linkedin_first_party_ads_tracking_uuid": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": ["sha256_email"],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "sha256_email": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "linkedin_first_party_ads_tracking_uuid": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": ["linkedin_first_party_ads_tracking_uuid"],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "event": {
+            "type": "object",
+            "properties": {
+              "conversion": {
+                "type": "string",
+                "minLength": 1
+              },
+              "conversionHappenedAt": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "number"
+                  }
+                ]
+              },
+              "eventId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "conversionValue": {
+                "type": "object",
+                "properties": {
+                  "currencyCode": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "amount": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": ["currencyCode", "amount"],
+                "additionalProperties": false
+              }
+            },
+            "required": ["conversion", "conversionHappenedAt"],
+            "additionalProperties": false
+          },
+          "user_data": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "companyName": {
+                "type": "string",
+                "minLength": 1
+              },
+              "lastName": {
+                "type": "string",
+                "minLength": 1
+              },
+              "firstName": {
+                "type": "string",
+                "minLength": 1
+              },
+              "country": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          },
+          "authentication": {
+            "type": "object",
+            "properties": {
+              "accessToken": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": ["user_identification", "event"],
+        "additionalProperties": false
+      },
+      "libPath": "src/lib/actions/sendConversion.js",
+      "viewPath": "actions/sendConversion.html"
+    }
+  ]
+}
