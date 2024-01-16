@@ -1,7 +1,7 @@
 {
   "name": "@adobe/reactor-extension-linkedin-edge",
   "platform": "edge",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Forward data to LinkedIn by using the LinkedIn Conversion API.",
   "author": {
     "name": "Adobe",
