@@ -58,7 +58,17 @@ export default function SendEvent() {
                 Conversions API
               </a>
             </Link>{' '}
-            endpoint.
+            endpoint. Check{' '}
+            <Link>
+              <a
+                href="https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/linkedin/overview.html"
+                target="_blank"
+                rel="noreferrer"
+              >
+                user guide
+              </a>
+            </Link>{' '}
+            for detailed instructions.
           </Content>
           <UserIdentificationFields />
           <ConversionDataFields />

@@ -154,10 +154,9 @@ export default function ServerEventParametersFields() {
         <Info aria-label="Information about field hashing" />
         <Text>
           Before sending the data to the LinkedIn API endpoint, the extension
-          will hash and normalize the value of the Email field.
-          <br />
-          The extension will not hash the value of this field if a SHA256 string
-          is already present.
+          will hash and normalize the value of the Email field. The extension
+          will not hash the value of this field if a SHA256 string is already
+          present.
         </Text>
       </Badge>
     </View>

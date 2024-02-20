@@ -60,6 +60,11 @@ export default function CredentialsSectionFields({ mode }) {
                 For the access token you can use a data element associated with
                 a LinkedIn secret.
               </p>
+              <p>
+                The authenticated user tied to the chosen Access Token must have
+                access to the LinkedIn Ad Account for the provided Conversion
+                Rule. If not, conversion event data will fail to send.
+              </p>
             </Content>
           </ContextualHelp>
         }
