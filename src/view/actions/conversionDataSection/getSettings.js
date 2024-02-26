@@ -50,7 +50,15 @@ export default ({ ...values }) => {
         settings.event.conversionValue = {};
       }
 
-      settings.event.conversionValue.amount = values.conversionValue.amount;
+      if (isDataElementToken(values.conversionValue.amount)) {
+        settings.event.conversionValue.amount = values.conversionValue.amount;
+      } else {
+        settings.event.conversionValue.amount = parseFloat(
+          values.conversionValue.amount
+        )
+          .toFixed(2)
+          .toString();
+      }
     }
   }
 

@@ -75,6 +75,7 @@ export default function ConversionDataSectionFields() {
         width="size-4600"
         label="Amount"
         supportDataElement
+        description='Value of the conversion in decimal string (e.g. "100.05").'
       />
 
       <WrappedTextField

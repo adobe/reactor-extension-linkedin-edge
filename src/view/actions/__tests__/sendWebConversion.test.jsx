@@ -149,7 +149,7 @@ describe('Send Conversion view', () => {
         eventId: 'conversionid',
         conversionValue: {
           currencyCode: 'EUR',
-          amount: '100'
+          amount: '100.00'
         },
         conversion: 'ABC'
       },
